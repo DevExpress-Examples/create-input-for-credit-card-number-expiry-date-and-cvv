@@ -14,7 +14,7 @@ A repository template for creating new examples.
 
 Here is an example of how to use MaskedInput component to show a large input with credit card number, month/year and CVV as shown below:
 
-![alt text](https://github.com/dlvaleroso98/How-to-create-MaskedInput-with-credit-card-number-valid-month-year-CVV-and-ZIP/blob/21.2.3%2B/sample.jpg)
+![alt text](https://github.com/DevExpress-Examples/MaskedInput-for-Blazor---How-to-create-an-input-with-credit-card-number-month-year-and-CVV/blob/21.2.3%2B/Sample.JPG)
 
 The main idea is to use multiple MaskedInputs for Card number, valid month/year and CVV. Then remove their borders and put them inside a div container.
 
