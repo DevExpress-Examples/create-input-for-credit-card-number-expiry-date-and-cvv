@@ -3,82 +3,16 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1053365)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!--
-A repository template for creating new examples.
--->
 
-# MaskedInput for Blazor - How to create an input with credit card number, month/year and CVV
+# MaskedInput for Blazor - How to create an input element for a card number, expiry date, and CVV
 
-Here is an example of how to use MaskedInput component to show a large input with credit card number, month/year and CVV as shown below:
+This example demonstrates how to show an input element that contains fields for a credit card number, expiration date, and card verification value (CVV).
 
-![](./Sample.JPG)
+![Input element for a card number, expiry date, and CVV](./Sample.JPG)
 
-The main idea is to use multiple MaskedInputs for Card number, valid month/year and CVV. Then remove their borders and put them inside a div container.
+## Overview
 
-# Razor
-
-```razor
-<div class="container-input">
-    <div>
-        <DxMaskedInput @bind-Value="@CardNumber"
-                       InputCssClass="border-none"
-                       Mask="\d{4} \d{4} \d{4} \d{4}" MaskMode="MaskMode.RegEx"
-                       NullText="Card Number">
-            <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
-        </DxMaskedInput>
-    </div>
-    <div>
-        <DxMaskedInput @bind-Value="@Date"
-                       Mask="@DateTimeMaskValue"
-                       InputCssClass="border-none"
-                       NullText="MM/YY"
-                       CssClass="width-sm">
-        </DxMaskedInput>
-        <DxMaskedInput @bind-Value="@CVV"
-                       InputCssClass="border-none"
-                       Mask="\d{3}" MaskMode="MaskMode.RegEx"
-                       CssClass="width-sm"
-                       NullText="CVV">
-            <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
-        </DxMaskedInput>
-    </div>
-</div>
-<br />
-<div class="container-input">
-    <DxMaskedInput @bind-Value="@CardHolder" CssClass="w-100"
-                   InputCssClass="border-none"
-                   Mask="([A-Z]+ ?){1,3}" MaskMode="MaskMode.RegEx"
-                   NullText="HOLDER NAME">
-        <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
-    </DxMaskedInput>
-</div>
-@code { DateTime? Date { get; set; } = null;
-    string DateTimeMaskValue = "MM/yy";
-    string CardNumber { get; set; } = null;
-    string CVV { get; set; }
-    string CardHolder { get; set; }
-}
-```
-# CSS
-
-```css
-    .border-none {
-        border: 0 !important;
-        box-shadow: none !important;
-    }
-    .container-input {
-        display: flex;
-        justify-content: space-between;
-        width: 500px;
-        border: 2px solid black ;
-    }
-        .container-input > div {
-            display: flex;
-        }
-    .width-sm {
-        width:75px;
-    }
-```
+The [DxMaskedInput](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxMaskedInput-1) component is a text editor that supports [masks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxMaskedInput-1.Mask). Place multiple **DxMaskedInput** components in a div container to create fields for a card number, expiration date, and CVV. Use the [InputCssClass](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxInputDataEditorBase-1.InputCssClass) property to remove their borders and display these components as a single input element.
 
 <!-- default file list -->
 
@@ -88,18 +22,11 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year 
 
 <!-- default file list end -->
 
-<!--
-
 ## Documentation
 
-- link
-- link
-- ...
+- [Apply a Mask](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxMaskedInput-1#apply-a-mask)
+- [Masks](https://docs.devexpress.com/Blazor/402513/data-editors/masks)
 
 ## More Examples
 
-- link
-- link
-- ...
-
--->
+- [DevExpress Blazor - How to localize components](https://github.com/DevExpress-Examples/localize-devexpress-blazor-components)
