@@ -1,0 +1,64 @@
+﻿@page "/"
+
+<style>
+    .border-none {
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .container-input {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        border: 2px solid black;
+    }
+
+        .container-input > div {
+            display: flex;
+        }
+
+    .width-sm {
+        width: 75px;
+    }
+
+</style>
+<div class="container-input">
+    <div>
+        <DxMaskedInput @bind-Value="@CardNumber"
+                       InputCssClass="border-none"
+                       Mask="\d{4} \d{4} \d{4} \d{4}" MaskMode="MaskMode.RegEx"
+                       NullText="Card Number">
+            <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
+        </DxMaskedInput>
+    </div>
+    <div>
+        <DxMaskedInput @bind-Value="@Date"
+                       Mask="@DateTimeMaskValue"
+                       InputCssClass="border-none"
+                       NullText="MM/YY"
+                       CssClass="width-sm">
+        </DxMaskedInput>
+        <DxMaskedInput @bind-Value="@CVV"
+                       InputCssClass="border-none"
+                       Mask="\d{3}" MaskMode="MaskMode.RegEx"
+                       CssClass="width-sm"
+                       NullText="CVV">
+            <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
+        </DxMaskedInput>
+    </div>
+</div>
+<br />
+<div class="container-input">
+    <DxMaskedInput @bind-Value="@CardHolder" CssClass="w-100"
+                   InputCssClass="border-none"
+                   Mask="([A-Z]+ ?){1,3}" MaskMode="MaskMode.RegEx"
+                   NullText="HOLDER NAME">
+        <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
+    </DxMaskedInput>
+</div>
+@code { DateTime? Date { get; set; } = null;
+    string DateTimeMaskValue = "MM/yy";
+    string CardNumber { get; set; } = null;
+    string CVV { get; set; }
+    string CardHolder { get; set; }
+}
