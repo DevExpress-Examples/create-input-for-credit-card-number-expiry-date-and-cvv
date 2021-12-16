@@ -11,7 +11,7 @@ A repository template for creating new examples.
 
 Here is an example of how to use MaskedInput component to show a large input with credit card number, month/year and CVV as shown below:
 
-![alt text](.Sample.JPG)
+![alt text](./Sample.JPG)
 
 The main idea is to use multiple MaskedInputs for Card number, valid month/year and CVV. Then remove their borders and put them inside a div container.
 
