@@ -18,7 +18,7 @@ The [DxMaskedInput](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxMaske
 
 ## Files to Look At
 
-- [Index.razor](./CS/BlazorServerApp/Pages/Index.razor)
+- [Index.razor](./CS/InputCreditCard/Pages/Index.razor)
 
 <!-- default file list end -->
 
